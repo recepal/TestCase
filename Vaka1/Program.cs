@@ -1,6 +1,6 @@
 ﻿
 //int[] prices = new int[] { 7, 1, 5, 3, 6, 4 };
-int[] prices = new int[] { 37, 26, 14, 8, 1 };
+int[] prices = new int[] {  2, 5 };
 
 int result = FindMaxProfit(prices);
 
@@ -21,10 +21,11 @@ int FindMaxProfit(int[] nums)
                 val = nums[j] - key;
             }
         }
-        dict.Add(key, val);
+
+        if (!dict.ContainsKey(key)) dict.Add(key, val);
     }
 
-    return dict.Values.Max();
+    return dict.Values.Any() ? dict.Values.Max() : 0;
 }
 
 //dictionaryde max karları tutarız, return olarak da dictionaryinin max value değerini döneriz.
