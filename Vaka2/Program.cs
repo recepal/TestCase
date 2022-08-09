@@ -12,6 +12,7 @@ public class Program
         robot.GetDir();
         robot.Step(2);
         robot.Step(1);
+        robot.Step(4);
         robot.GetPos();
         robot.GetDir();
     }

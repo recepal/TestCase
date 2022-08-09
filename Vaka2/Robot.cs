@@ -48,7 +48,7 @@ namespace Vaka2
 
             if (Direction == DirectionEnum.Dogu)
             {
-                int newLatitude = Latitude += num;
+                int newLatitude = Latitude + num;
 
                 if (newLatitude <= xArea)
                 {
@@ -63,7 +63,7 @@ namespace Vaka2
             }
             else if (Direction == DirectionEnum.Bati)
             {
-                int newLatitude = Latitude -= num;
+                int newLatitude = Latitude - num;
 
                 if (newLatitude >= 0)
                 {
@@ -78,7 +78,7 @@ namespace Vaka2
             }
             else if (Direction == DirectionEnum.Kuzey)
             {
-                int newLongitude = Longitude += num;
+                int newLongitude = Longitude + num;
 
                 if (newLongitude <= yArea)
                 {
@@ -86,14 +86,14 @@ namespace Vaka2
                 }
                 else if (newLongitude > yArea)
                 {
-                    Longitude += yArea - Latitude;
+                    Longitude += yArea - Longitude;
                     Turn();
                     Step(newLongitude - yArea);
                 }
             }
             else if (Direction == DirectionEnum.Guney)
             {
-                int newLongitude = Longitude -= num;
+                int newLongitude = Longitude - num;
 
                 if (newLongitude >= 0)
                 {
